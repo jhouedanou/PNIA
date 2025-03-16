@@ -4,7 +4,8 @@
       <div class="container">
         <div class="header-content">
           <h1 class="site-title">
-            <NuxtLink to="/"><NuxtImg src="/images/mail.jpg"     height="40"  format="webp"
+            <NuxtLink to="/"><NuxtImg src="/images/mail.jpg"     
+              height="40"  format="webp"
               alt="Prix National d'Excellence" class="logo" /></NuxtLink>
           </h1>
           
