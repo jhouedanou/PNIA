@@ -45,7 +45,10 @@
       
       <div class="d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
-        <button type="button" class="btn btn-secondary" @click="resetForm">Réinitialiser</button>
+        <div>
+          <button type="button" class="btn btn-secondary me-2" @click="resetForm">Réinitialiser</button>
+          <button type="button" class="btn btn-danger" @click="logout">Déconnexion</button>
+        </div>
       </div>
       
       <div v-if="message" class="alert mt-3" :class="{'alert-success': !error, 'alert-danger': error}">
@@ -122,6 +125,12 @@ const resetForm = () => {
   formData.value = { ...originalData.value }
   message.value = 'Formulaire réinitialisé'
   error.value = false
+}
+
+// Déconnexion
+const logout = () => {
+  localStorage.removeItem('adminAuthenticated')
+  window.location.href = '/login'
 }
 
 // Charger les données au montage du composant

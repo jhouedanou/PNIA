@@ -1,10 +1,5 @@
 <template>
   <div class="container py-4">
-    <div class="text-center mt-4 pb-5">
-      <a :href="siteData.ctaLink" class="cta-button">
-        {{ siteData.ctaText }}
-      </a>
-    </div>
     <!-- Header Banner -->
     <div class="row mb-4">
       <div class="col-12">
@@ -53,13 +48,6 @@
               </div>
             </div>
           </div>
-
-          <!-- CTA Button -->
-          <div class="text-center mt-4">
-            <a :href="siteData.ctaLink" class="cta-button">
-              {{ siteData.ctaText }}
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -67,7 +55,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 // Charger les données du site depuis le JSON
 const siteData = ref({
