@@ -48,47 +48,20 @@
             <div class="col-12 col-md-5">
               <div class="h-100 d-flex flex-column justify-content-center align-items-center">
                 <div class="card w-100 mb-3">
-                  <div class="card-header bg-white">
-                    <h3 class="h5 montserrat-font mb-0">Actualités</h3>
-                  </div>
                   <div class="card-body">
-                    <div class="news-item mb-3 pb-3 border-bottom">
-                      <div class="d-flex">
-                        <div class="me-3">
-                          <img src="https://dummyimage.com/80x80/ff6a00/ffffff&text=News" alt="News" class="rounded">
-                        </div>
-                        <div>
-                          <h4 class="h6 montserrat-font">Lancement officiel du Prix 2025</h4>
-                          <p class="small text-muted mb-1">12 mars 2025</p>
-                          <p class="inter-font small">Lancement du Prix National d'Excellence en agriculture pour l'année 2025.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="news-item mb-3 pb-3 border-bottom">
-                      <div class="d-flex">
-                        <div class="me-3">
-                          <img src="https://dummyimage.com/80x80/246c44/ffffff&text=Event" alt="Event" class="rounded">
-                        </div>
-                        <div>
-                          <h4 class="h6 montserrat-font">Séance d'information</h4>
-                          <p class="small text-muted mb-1">20 mars 2025</p>
-                          <p class="inter-font small">Séance d'information pour les candidats potentiels à Abidjan.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="news-item">
-                      <div class="d-flex">
-                        <div class="me-3">
-                          <img src="https://dummyimage.com/80x80/333333/ffffff&text=Info" alt="Info" class="rounded">
-                        </div>
-                        <div>
-                          <h4 class="h6 montserrat-font">Ouverture des inscriptions</h4>
-                          <p class="small text-muted mb-1">1 avril 2025</p>
-                          <p class="inter-font small">Début des inscriptions pour le Prix Néerlandais de l’Innovation Agricole.</p>
-                        </div>
-                      </div>
+                    <div id="fb-root"></div>
+                    <div class="fb-page" 
+                      data-href="https://www.facebook.com/PNIAagriculture/" 
+                      data-tabs="timeline" 
+                      data-width="500" 
+                      data-height="400" 
+                      data-small-header="false" 
+                      data-adapt-container-width="true" 
+                      data-hide-cover="false" 
+                      data-show-facepile="true">
+                      <blockquote cite="https://www.facebook.com/PNIAagriculture/" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/PNIAagriculture/">PNIA Agriculture</a>
+                      </blockquote>
                     </div>
                   </div>
                   <div class="card-footer bg-white text-center">
@@ -167,12 +140,47 @@ const loadSiteData = async () => {
   }
 }
 
+// Initialiser le SDK Facebook
+const initFacebookSDK = () => {
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v18.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v18.0';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+}
+
 // Charger les données au montage du composant
 onMounted(() => {
   try {
     loadSiteData()
+    initFacebookSDK()
   } catch (error) {
     console.error('Erreur:', error)
   }
-})
+});
 </script>
+
+<style scoped>
+/* Styles pour assurer que le widget Facebook s'adapte correctement */
+.fb-page {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 576px) {
+  .fb-page {
+    width: 100%;
+  }
+}
+</style>

@@ -85,7 +85,7 @@ const toggleMobileMenu = () => {
 };
 </script>
 
-<style>
+<style lang="scss">
 /* Base styles */
 body {
   font-family: 'Inter', sans-serif;
@@ -146,18 +146,36 @@ body {
   margin-left: auto;
 }
 
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: #555;
-  padding: 8px 12px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  font-size: 0.85rem;
+.nav-item {    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #555;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.85rem;
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #555;
+      padding: 0em;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 0.85rem;
+      height: 86px;
+    }
 }
 
 .nav-item i {
