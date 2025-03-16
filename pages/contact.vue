@@ -130,7 +130,7 @@
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                          Les lauréats du Prix National d'Excellence 2025 recevront :
+                          Les lauréats du Prix Néerlandais de l’Innovation Agricole recevront :
                           <ul>
                             <li>Une récompense financière</li>
                             <li>Un accompagnement technique et financier pour développer leur projet</li>

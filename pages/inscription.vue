@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-12">
         <div class="bg-white p-4 rounded shadow-sm">
-          <h1 class="text-center mb-4">Inscription au Prix National d'Excellence 2025</h1>
+          <h1 class="text-center mb-4">Inscription au Prix Néerlandais de l’Innovation Agricole</h1>
           
           <!-- Introduction au formulaire -->
           <div class="alert alert-info mb-4">
             <h4 class="alert-heading">Informations importantes</h4>
-            <p>Veuillez remplir tous les champs obligatoires du formulaire ci-dessous pour vous inscrire au Prix National d'Excellence 2025.</p>
+            <p>Veuillez remplir tous les champs obligatoires du formulaire ci-dessous pour vous inscrire au Prix Néerlandais de l’Innovation Agricole.</p>
             <p>Après soumission, vous recevrez une confirmation par email avec les prochaines étapes à suivre.</p>
           </div>
           

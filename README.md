@@ -1,8 +1,8 @@
-# PNIA - Prix National d'Excellence 2025
+# PNIA - Prix Néerlandais de l’Innovation Agricole
 NuxtJS website for prix national de l'agriculture
 
 ## Description
-Ce projet est un site web pour le Prix National d'Excellence 2025, développé avec Nuxt 3. Il comprend une page d'accueil avec une vidéo YouTube et une intégration Facebook, ainsi qu'une interface d'administration pour gérer les textes du site.
+Ce projet est un site web pour le Prix Néerlandais de l’Innovation Agricole, développé avec Nuxt 3. Il comprend une page d'accueil avec une vidéo YouTube et une intégration Facebook, ainsi qu'une interface d'administration pour gérer les textes du site.
 
 ## Fonctionnalités
 - Page d'accueil avec vidéo YouTube et intégration Facebook

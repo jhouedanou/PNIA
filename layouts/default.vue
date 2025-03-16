@@ -3,7 +3,7 @@
     <header class="py-3 bg-white shadow-sm">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h1 class="h4 m-0 montserrat-font">Prix National d'Excellence 2025</h1>
+          <h1 class="h4 m-0 montserrat-font">Prix Néerlandais de l’Innovation Agricole</h1>
           <nav class="main-nav">
             <NuxtLink to="/" class="nav-link">Accueil</NuxtLink>
             <NuxtLink to="/mot-ambassadeur" class="nav-link">Mot de l'Ambassadeur</NuxtLink>
@@ -11,11 +11,9 @@
             <NuxtLink to="/conditions" class="nav-link">Conditions</NuxtLink>
             <NuxtLink to="/processus" class="nav-link">Processus</NuxtLink>
             <NuxtLink to="/jury" class="nav-link">Jury</NuxtLink>
-            <NuxtLink to="/postulez" class="nav-link">Postulez</NuxtLink>
             <NuxtLink to="/news" class="nav-link">News</NuxtLink>
             <NuxtLink to="/mediatheque" class="nav-link">Médiathèque</NuxtLink>
             <NuxtLink to="/contact" class="nav-link">Contact & FAQ</NuxtLink>
-            <NuxtLink to="/login" class="nav-link">Administration</NuxtLink>
           </nav>
         </div>
       </div>

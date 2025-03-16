@@ -5,7 +5,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/tailwindcss',
-    '@vite-pwa/nuxt',
   ],
 
   app: {
@@ -29,9 +28,6 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'Prix National d\'Excellence 2025' },
         { name: 'twitter:description', content: 'Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire' },
         { name: 'twitter:image', content: 'https://prixnational.ci/images/og-image.jpg' },
-        
-        // PWA theme colors
-        { name: 'theme-color', content: '#ff6a00' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -42,78 +38,6 @@ export default defineNuxtConfig({
       ],
       script: [
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js', body: true }
-      ]
-    }
-  },
-
-  pwa: {
-    registerType: 'autoUpdate',
-    manifest: {
-      name: 'Prix National d\'Excellence 2025',
-      short_name: 'PNIA 2025',
-      description: 'Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire',
-      lang: 'fr',
-      theme_color: '#ff6a00',
-      background_color: '#ffffff',
-      display: 'standalone',
-      icons: [
-        {
-          src: 'icons/icon-72x72.png',
-          sizes: '72x72',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-96x96.png',
-          sizes: '96x96',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-128x128.png',
-          sizes: '128x128',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-144x144.png',
-          sizes: '144x144',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-152x152.png',
-          sizes: '152x152',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-192x192.png',
-          sizes: '192x192',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-384x384.png',
-          sizes: '384x384',
-          type: 'image/png'
-        },
-        {
-          src: 'icons/icon-512x512.png',
-          sizes: '512x512',
-          type: 'image/png'
-        }
-      ]
-    },
-    workbox: {
-      navigateFallback: '/',
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      runtimeCaching: [
-        {
-          urlPattern: 'https://fonts.googleapis.com/.*',
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'google-fonts',
-            expiration: {
-              maxEntries: 30,
-              maxAgeSeconds: 60 * 60 * 24 * 30
-            }
-          }
-        }
       ]
     }
   },

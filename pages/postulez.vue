@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-12">
         <div class="bg-white p-4 rounded shadow-sm">
-          <h1 class="text-center mb-4">Postulez au Prix National d'Excellence 2025</h1>
+          <h1 class="text-center mb-4">Postulez au Prix Néerlandais de l’Innovation Agricole</h1>
           
           <div class="mb-5">
-            <p class="lead text-center">Suivez les étapes ci-dessous pour soumettre votre candidature et participer au Prix National d'Excellence 2025.</p>
+            <p class="lead text-center">Suivez les étapes ci-dessous pour soumettre votre candidature et participer au Prix Néerlandais de l’Innovation Agricole.</p>
             
             <!-- Étapes pour postuler -->
             <div class="row mt-5">
