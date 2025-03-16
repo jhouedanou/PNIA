@@ -1,34 +1,34 @@
 <template>
-  <div class="container py-4">
+  <div class="container py-5">
     <div class="row">
       <div class="col-12">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="bg-white p-5 rounded shadow">
           <!-- Bouton retour -->
-          <NuxtLink to="/news" class="btn btn-outline-primary mb-4">
+          <NuxtLink to="/news" class="btn-back mb-4">
             <i class="bi bi-arrow-left"></i> Retour aux actualités
           </NuxtLink>
           
           <div v-if="article">
             <!-- En-tête de l'article -->
-            <h1 class="text-center mb-3 section-title montserrat-font">{{ article.title }}</h1>
+            <h1 class="text-center mb-3 section-title">{{ article.title }}</h1>
             <div class="d-flex justify-content-center align-items-center mb-4">
               <span class="badge me-2" :class="getCategoryClass(article.category)">
                 {{ getCategoryName(article.category) }}
               </span>
-              <span class="text-muted inter-font">{{ formatDate(article.date) }}</span>
+              <span class="text-muted">{{ formatDate(article.date) }}</span>
             </div>
             
             <!-- Image principale -->
-            <div class="mb-4 text-center">
-              <img :src="article.image" :alt="article.title" class="img-fluid rounded shadow-sm" style="max-height: 400px; width: auto;">
+            <div class="mb-5 text-center">
+              <img :src="article.image" :alt="article.title" class="img-fluid rounded shadow" style="max-height: 400px; width: auto;">
             </div>
             
             <!-- Contenu de l'article -->
-            <div class="article-content inter-font">
+            <div class="article-content">
               <p class="lead mb-4">{{ article.description }}</p>
               <div v-for="(paragraph, index) in formattedContent" :key="index" class="mb-3">
                 <div v-if="paragraph.startsWith('## ')" class="mt-4 mb-3">
-                  <h2 class="montserrat-font">{{ paragraph.replace('## ', '') }}</h2>
+                  <h2>{{ paragraph.replace('## ', '') }}</h2>
                 </div>
                 <div v-else-if="paragraph.startsWith('- ')" class="d-flex">
                   <span class="me-2">•</span>
@@ -42,19 +42,19 @@
             </div>
             
             <!-- Partage sur les réseaux sociaux -->
-            <div class="mt-5 text-center">
-              <h5 class="montserrat-font mb-3">Partager cet article</h5>
-              <div class="d-flex justify-content-center">
-                <a href="#" class="mx-2 btn btn-outline-primary" title="Partager sur Facebook">
+            <div class="share-section">
+              <h5 class="mb-3">Partager cet article</h5>
+              <div class="d-flex social-icons">
+                <a href="#" class="social-icon" title="Partager sur Facebook">
                   <i class="bi bi-facebook"></i>
                 </a>
-                <a href="#" class="mx-2 btn btn-outline-info" title="Partager sur Twitter">
+                <a href="#" class="social-icon" title="Partager sur Twitter">
                   <i class="bi bi-twitter"></i>
                 </a>
-                <a href="#" class="mx-2 btn btn-outline-success" title="Partager sur WhatsApp">
+                <a href="#" class="social-icon" title="Partager sur WhatsApp">
                   <i class="bi bi-whatsapp"></i>
                 </a>
-                <a href="#" class="mx-2 btn btn-outline-secondary" title="Partager par email">
+                <a href="#" class="social-icon" title="Partager par email">
                   <i class="bi bi-envelope"></i>
                 </a>
               </div>
@@ -125,18 +125,24 @@ const getCategoryName = (category) => {
 </script>
 
 <style scoped>
-.montserrat-font {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.inter-font {
-  font-family: 'Inter', sans-serif;
-}
-
 .section-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-back {
+  display: inline-block;
+  color: #246c44;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #246c44;
+}
+
+.btn-back:hover {
+  background-color: #246c44;
+  color: white;
 }
 
 .badge {
@@ -148,5 +154,64 @@ const getCategoryName = (category) => {
 .article-content {
   font-size: 1.05rem;
   line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.article-content h2 {
+  color: #246c44;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.article-content .lead {
+  color: #555;
+  font-weight: 500;
+}
+
+.share-section {
+  margin-top: 50px;
+  text-align: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.share-section h5 {
+  color: #246c44;
+}
+
+.social-icons {
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  background-color: #246c44;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #ff6a00;
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background-color: #246c44;
+  border-color: #246c44;
+}
+
+.btn-primary:hover {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
 }
 </style>

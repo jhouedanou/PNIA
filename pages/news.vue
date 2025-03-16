@@ -1,15 +1,15 @@
 <template>
-  <div class="container py-4">
+  <div class="container py-5">
     <div class="row">
       <div class="col-12">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="bg-white p-5 rounded shadow">
           <h1 class="text-center mb-4 section-title montserrat-font">Actualités</h1>
           
           <div class="mb-5">
             <p class="lead text-center inter-font">Restez informé des dernières nouvelles et événements concernant le Prix Néerlandais de l'Innovation Agricole.</p>
             
             <!-- Filtres de recherche -->
-            <div class="row mb-4">
+            <div class="row mb-5">
               <div class="col-md-8 offset-md-2">
                 <div class="input-group">
                   <input type="text" class="form-control inter-font" placeholder="Rechercher une actualité..." v-model="searchQuery">
@@ -33,9 +33,9 @@
                   <div class="card-body">
                     <span class="badge mb-2" :class="getCategoryClass(article.category)">{{ getCategoryName(article.category) }}</span>
                     <h3 class="card-title montserrat-font">{{ article.title }}</h3>
-                    <p class="card-text text-muted mb-2 inter-font">{{ formatDate(article.date) }}</p>
+                    <p class="card-text text-muted mb-2 small inter-font">{{ formatDate(article.date) }}</p>
                     <p class="card-text inter-font">{{ article.description }}</p>
-                    <NuxtLink :to="`/article/${article.id}`" class="btn btn-link text-primary p-0 inter-font">Lire la suite <i class="bi bi-arrow-right"></i></NuxtLink>
+                    <NuxtLink :to="`/article/${article.id}`" class="btn-read-more">Lire la suite <i class="bi bi-arrow-right"></i></NuxtLink>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@
           </div>
           
           <!-- Newsletter -->
-          <div class="mt-5 mb-5 p-4 bg-light rounded">
+          <div class="newsletter-section">
             <div class="row">
               <div class="col-md-8 offset-md-2 text-center">
                 <h3 class="montserrat-font">Restez informé</h3>
@@ -141,9 +141,7 @@ const getCategoryName = (category) => {
 }
 
 .section-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .news-card {
@@ -175,8 +173,38 @@ const getCategoryName = (category) => {
   border-radius: 20px;
 }
 
+.btn-read-more {
+  color: #246c44;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+}
+
+.btn-read-more::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6a00;
+  transition: width 0.3s;
+}
+
+.btn-read-more:hover {
+  color: #ff6a00;
+}
+
+.btn-read-more:hover::after {
+  width: 100%;
+}
+
 .page-link {
   color: #246c44;
+  border-color: #e9ecef;
 }
 
 .page-item.active .page-link {
@@ -184,22 +212,37 @@ const getCategoryName = (category) => {
   border-color: #246c44;
 }
 
+.page-link:hover {
+  color: #ff6a00;
+  background-color: #f8f9fa;
+}
+
+.newsletter-section {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #ff6a00;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.newsletter-section h3 {
+  color: #246c44;
+  margin-bottom: 20px;
+}
+
 .btn-primary {
   background-color: #246c44;
   border-color: #246c44;
 }
 
-.btn-primary:hover {
-  background-color: #1a5032;
-  border-color: #1a5032;
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
 }
 
-.btn-link {
-  color: #246c44 !important;
-}
-
-.btn-link:hover {
-  color: #1a5032 !important;
-  text-decoration: underline;
+input.form-control:focus {
+  border-color: #246c44;
+  box-shadow: 0 0 0 0.25rem rgba(36, 108, 68, 0.25);
 }
 </style>
