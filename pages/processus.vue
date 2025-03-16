@@ -231,7 +231,7 @@
 .timeline-panel {
   position: relative;
   width: calc(100% - 70px);
-  float: right;
+
   border-radius: 10px;
   padding: 25px;
   background-color: #fff;

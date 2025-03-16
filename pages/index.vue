@@ -121,13 +121,13 @@ import { ref, onMounted } from 'vue'
 
 // Charger les données du site depuis le JSON
 const siteData = ref({
-  title: 'Prix National d\'Excellence 2025',
+  title: 'Prix Néerlandais de l\'Innovation Agricole',
   ctaText: 'POSTULEZ MAINTENANT',
   ctaLink: '/postulez',
   bannerImage: 'https://dummyimage.com/1200x400/ff6a00/ffffff&text=Prix+National+d\'Excellence+2025',
   bannerAlt: 'Prix National d\'Excellence Banner',
   videoUrl: 'https://www.youtube.com/embed/qa4xQvziGEk',
-  videoTitle: 'Prix National d\'Excellence 2025'
+  videoTitle: 'Prix Néerlandais de l\'Innovation Agricole'
 })
 
 // Fonction pour charger les données du site depuis le fichier JSON

@@ -41,6 +41,24 @@ npm run preview
 ## Gestion des textes
 Les textes du site sont stockés dans le fichier `public/data/site-data.json` et peuvent être modifiés via l'interface d'administration accessible à l'URL `/admin` après authentification.
 
+## Système de feedback utilisateur
+Le site intègre un système de feedback permettant aux utilisateurs de soumettre des commentaires, signaler des bugs ou suggérer des améliorations. Ce système inclut une fonctionnalité de capture d'écran.
+
+### Configuration du système de feedback
+1. Créez un fichier `.env` à la racine du projet en vous basant sur `.env.example`
+2. Configurez les paramètres SMTP pour l'envoi d'emails:
+   ```
+   SMTP_HOST=smtp.gmail.com
+   SMTP_PORT=587
+   SMTP_SECURE=false
+   SMTP_USER=votre-email@gmail.com
+   SMTP_PASS=votre-mot-de-passe-d-application
+   ```
+   
+   > **Note**: Pour Gmail, vous devrez utiliser un "mot de passe d'application" plutôt que votre mot de passe normal.
+
+3. Les feedbacks seront envoyés à l'adresse jeanluc@houedanou.com avec les captures d'écran en pièce jointe.
+
 ## Accès à l'administration
 L'interface d'administration est protégée par un mot de passe. Pour y accéder :
 1. Cliquez sur le bouton "Administration" dans la navigation

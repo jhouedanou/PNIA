@@ -4,7 +4,8 @@
       <div class="container">
         <div class="header-content">
           <h1 class="site-title">
-            <NuxtLink to="/">Prix Néerlandais de l'Innovation Agricole</NuxtLink>
+            <NuxtLink to="/"><NuxtImg src="/images/mail.jpg"     height="40"  format="webp"
+              alt="Prix National d'Excellence" class="logo" /></NuxtLink>
           </h1>
           
           <button class="mobile-menu-toggle d-lg-none" @click="toggleMobileMenu">
@@ -65,11 +66,15 @@
 
     <!-- Overlay pour fermer le menu mobile -->
     <div class="mobile-menu-overlay" v-if="mobileMenuOpen" @click="toggleMobileMenu"></div>
+    
+    <!-- Composant de feedback -->
+    <FeedbackForm />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import FeedbackForm from '~/components/FeedbackForm.vue';
 
 const mobileMenuOpen = ref(false);
 
@@ -102,6 +107,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, #ff6a00, #246c44);
+  border-image-slice: 1;
 }
 
 .header-content {
@@ -126,17 +134,17 @@ body {
   text-decoration: none;
 }
 
-.site-title::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 70%;
-  background-color: #ff6a00;
-  border-radius: 5px;
-}
+// .site-title::before {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   width: 5px;
+//   height: 70%;
+//   background-color: #ff6a00;
+//   border-radius: 5px;
+// }
 
 /* Navigation */
 .main-nav {

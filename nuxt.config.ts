@@ -3,31 +3,29 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
 
   app: {
     head: {
-      title: 'Prix National d\'Excellence 2025',
+      title: 'Prix Néerlandais de l\'Innovation Agricole',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Prix National d\'Excellence 2025 - Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire' },
+        { hid: 'description', name: 'description', content: 'Prix Néerlandais de l\'Innovation Agricole - Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire' },
         
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://prixnational.ci/' },
-        { property: 'og:title', content: 'Prix National d\'Excellence 2025' },
+        { property: 'og:url', content: 'https://agripreneur.ci/' },
+        { property: 'og:title', content: 'Prix Néerlandais de l\'Innovation Agricole' },
         { property: 'og:description', content: 'Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire' },
-        { property: 'og:image', content: 'https://prixnational.ci/images/og-image.jpg' },
+        { property: 'og:image', content: 'https://agripreneur.ci/images/og-image.jpg' },
         
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:url', content: 'https://prixnational.ci/' },
-        { name: 'twitter:title', content: 'Prix National d\'Excellence 2025' },
+        { name: 'twitter:url', content: 'https://agripreneur.ci/' },
+        { name: 'twitter:title', content: 'Prix Néerlandais de l\'Innovation Agricole' },
         { name: 'twitter:description', content: 'Célébration de l\'innovation et l\'excellence dans le secteur agricole en Côte d\'Ivoire' },
-        { name: 'twitter:image', content: 'https://prixnational.ci/images/og-image.jpg' },
+        { name: 'twitter:image', content: 'https://agripreneur.ci/images/og-image.jpg' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
